@@ -10,7 +10,7 @@ app = Flask(__name__)
 model_pk = joblib.load(open("model-flower-v1.pkl"), "rb")
 
 
-@app.route("/api_predict", methods="['POST', 'GET']")
+@app.route("/api_predict", methods=['POST', 'GET'])
 def api_predict():
     if request.method == "GET":
         return "Please send POST request"
