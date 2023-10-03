@@ -1,13 +1,10 @@
 from flask import Flask, request
-
-import joblib
+import pickle
 import numpy as np
-
 from sklearn.linear_model import LogisticRegression
-
 app = Flask(__name__)
 
-model_pk = joblib.load(open("model-flower-v1.pkl"), "rb")
+model_pk = pickle.load(open("model-flower-v1.pkl", "rb"))
 
 
 @app.route("/api_predict", methods=['POST', 'GET'])
